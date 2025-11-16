@@ -1,0 +1,10 @@
+SELECT EXTRACT(YEAR FROM CAST(invoice_date AS date)), 
+       MIN(total),
+       MAX(total),
+       SUM(total),
+       COUNT(invoice_id),
+       ROUND(SUM(total) / COUNT(DISTINCT customer_id))
+FROM invoice
+WHERE billing_country IN ('USA','United Kingdom','Germany')
+GROUP BY EXTRACT(YEAR FROM CAST(invoice_date AS date))
+ORDER BY EXTRACT(YEAR FROM CAST(invoice_date AS date)) DESC;
