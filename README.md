@@ -1,2 +1,2 @@
-# SQL-for-analysts
-SQL для аналитиков
+# SQL
+Блок с программами на SQL
